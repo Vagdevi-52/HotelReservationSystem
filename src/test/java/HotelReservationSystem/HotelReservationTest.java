@@ -3,7 +3,6 @@ package HotelReservationSystem;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -83,7 +82,7 @@ public class HotelReservationTest
 			result = hotelReservation.getCheapestHotels("11Sep2020", "12Sep2020", "regular");
 			result.forEach((k, v) -> System.out.println(k.getName() + " " + v));
 			assertNotNull(result);
-		} catch (InvalidCustomerException | InvalidDateRangeException e) 
+		} catch (InvalidCustomerException | InvalidDateRangeException e)
 		{
 			e.getMessage();
 		}
@@ -117,13 +116,13 @@ public class HotelReservationTest
 		hotelReservation.add(hotel2);
 		hotelReservation.add(hotel3);
 		Map<Hotel, Integer> result;
-		try 
+		try
 		{
 			result = hotelReservation.getCheapestAndBestRatedHotels("11Sep2020", "12Sep2020", "regular");
 			result.forEach(
 					(k, v) -> System.out.println(k.getName() + ", Rating : " + k.getRating() + " and Total Rate " + v));
 			assertNotNull(result);
-		} catch (InvalidCustomerException | InvalidDateRangeException e)
+		} catch (InvalidCustomerException | InvalidDateRangeException e) 
 		{
 			e.getMessage();
 		}
@@ -146,7 +145,7 @@ public class HotelReservationTest
 			result.forEach(
 					(k, v) -> System.out.println(k.getName() + ", Rating : " + k.getRating() + " and Total Rate " + v));
 			assertNotNull(result);
-		} catch (InvalidCustomerException | InvalidDateRangeException e) 
+		} catch (InvalidCustomerException | InvalidDateRangeException e)
 		{
 			e.getMessage();
 		}
@@ -171,7 +170,7 @@ public class HotelReservationTest
 	}
 	
 	@Test
-	public void whenGivenDateRangeShouldReturnCheapestAndBestRatedHotelForRewardsCustomer() //cheapest best rated hotel for rewards customer.
+	public void whenGivenDateRangeShouldReturnCheapestAndBestRatedHotelForRewardsCustomer() 
 	{
 		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 3, 80, 80);
 		Hotel hotel2 = new Hotel("Bridgewood", 150, 50, 4, 110, 50);
@@ -187,9 +186,33 @@ public class HotelReservationTest
 			result.forEach(
 					(k, v) -> System.out.println(k.getName() + ", Rating : " + k.getRating() + " and Total Rate " + v));
 			assertNotNull(result);
+		} catch (InvalidCustomerException | InvalidDateRangeException e) 
+		{
+			e.getMessage();
+		}
+	}
+	
+	@Test
+	public void whenGivenDateRangeShouldReturnCheapestAndBestRatedHotelForRegularCustomer() //cheapest rated hotel for regular customer.
+	{
+		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 3, 80, 80);
+		Hotel hotel2 = new Hotel("Bridgewood", 150, 50, 4, 110, 50);
+		Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 5, 100, 40);
+		HotelReservation hotelReservation = new HotelReservation();
+		hotelReservation.add(hotel1);
+		hotelReservation.add(hotel2);
+		hotelReservation.add(hotel3);
+		Map<Hotel, Integer> result;
+		try {
+			result = hotelReservation.getCheapestAndBestRatedHotels("11Sep2020", "12Sep2020", "regular");
+			result.forEach(
+					(k, v) -> System.out.println(k.getName() + ", Rating : " + k.getRating() + " and Total Rate " + v));
+			assertNotNull(result);
 		} catch (InvalidCustomerException | InvalidDateRangeException e)
 		{
 			e.getMessage();
 		}
 	}
 }
+
+		

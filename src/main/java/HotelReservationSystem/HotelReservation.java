@@ -155,18 +155,21 @@ public class HotelReservation
 		return bestHotels;
 	}
 
-	public LocalDate toLocalDate(String date) {
+	public LocalDate toLocalDate(String date)
+	{
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMMyyyy");
 		LocalDate localDate = LocalDate.parse(date, formatter);
 		return localDate;
 	}
 
-	public void validateCustomerType(String customerType) throws InvalidCustomerException {
+	public void validateCustomerType(String customerType) throws InvalidCustomerException
+	{
 		if (!(customerType.toLowerCase().matches("^regular$") || customerType.toLowerCase().matches("^reward$")))
 			throw new InvalidCustomerException("Invalid Customer Type !!!");
 	}
 
-	public void validateDateRange(String date1, String date2) throws InvalidDateRangeException {
+	public void validateDateRange(String date1, String date2) throws InvalidDateRangeException
+	{
 		LocalDate startDate = toLocalDate(date1);
 		LocalDate endDate = toLocalDate(date2);
 		if (startDate.isAfter(endDate))
