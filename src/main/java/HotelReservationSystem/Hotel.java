@@ -25,7 +25,7 @@ public class Hotel {
 		return name;
 	}
 
-	public void setName(String name) 
+	public void setName(String name) //set name.
 	{
 		this.name = name;
 	}
@@ -35,7 +35,7 @@ public class Hotel {
 		return regularWeekdayRate;
 	}
 
-	public void setRegularWeekdayRate(int regularWeekdayRate) 
+	public void setRegularWeekdayRate(int regularWeekdayRate) //set regular weekday rates.
 	{
 		this.regularWeekdayRate = regularWeekdayRate;
 	}
@@ -45,7 +45,7 @@ public class Hotel {
 		return regularWeekendRate;
 	}
 
-	public void setRegularWeekendRate(int regularWeekendRate) 
+	public void setRegularWeekendRate(int regularWeekendRate) //set regular weekend rate.
 	{
 		this.regularWeekendRate = regularWeekendRate;
 	}
@@ -55,7 +55,7 @@ public class Hotel {
 		return rewardsWeekdayRate;
 	}
 
-	public void setRewardsWeekdayRate(int rewardsWeekdayRate)
+	public void setRewardsWeekdayRate(int rewardsWeekdayRate) //set rewards weekday rate.
 	{
 		this.rewardsWeekdayRate = rewardsWeekdayRate;
 	}
@@ -65,7 +65,7 @@ public class Hotel {
 		return rewardsWeekendRate;
 	}
 
-	public void setRewardsWeekendRate(int rewardsWeekendRate)
+	public void setRewardsWeekendRate(int rewardsWeekendRate) // set rewards weekend rate.
 	{
 		this.rewardsWeekendRate = rewardsWeekendRate;
 	}
@@ -75,7 +75,7 @@ public class Hotel {
 		return rating;
 	}
 
-	public void setRating(int rating)
+	public void setRating(int rating) //set rating.
 	{
 		this.rating = rating;
 	}
