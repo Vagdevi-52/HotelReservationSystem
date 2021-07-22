@@ -93,7 +93,7 @@ public class HotelReservationTest
 	}
 	
 	@Test
-	public void whenGivenDateRangeShouldReturnCheapestBestRatedHotels() // cheapest best rated hotels.
+	public void whenGivenDateRangeShouldReturnCheapestBestRatedHotels() //best rated hotel.
 	{
 		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 80, 80, 3);
 		Hotel hotel2 = new Hotel("Bridgewood", 150, 50, 110, 50, 4);
