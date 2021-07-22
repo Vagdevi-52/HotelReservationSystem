@@ -1,9 +1,9 @@
 package HotelReservationSystem;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class HotelReservationTest
 	}
 
 	@Test
-	public void whenGivenDateRangeShouldReturnCheapestHotel() //given date range should return cheapest hotel.
+	public void whenGivenDateRangeShouldReturnCheapestHotel()
 	{
 		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 80, 80, 3);
 		Hotel hotel2 = new Hotel("Bridgewood", 160, 60, 110, 50, 4);
@@ -45,7 +45,7 @@ public class HotelReservationTest
 	}
 
 	@Test
-	public void whenGivenHotelAddedShouldAddWeekendPrices() // given hotel should add weekend prices.
+	public void whenGivenHotelAddedShouldAddWeekendPrices() 
 	{
 		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 80, 80, 3);
 		Hotel hotel2 = new Hotel("Bridgewood", 160, 60, 110, 50, 4);
@@ -61,7 +61,7 @@ public class HotelReservationTest
 	}
 	
 	@Test
-	public void whenGivenDateRangeShouldReturnCheapestHotels() //given date range should return cheapest hotels.
+	public void whenGivenDateRangeShouldReturnCheapestHotels() 
 	{
 		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 80, 80, 3);
 		Hotel hotel2 = new Hotel("Bridgewood", 150, 50, 110, 50, 4);
@@ -73,5 +73,21 @@ public class HotelReservationTest
 		Map<Hotel, Integer> result = hotelReservation.searchFor("11Sep2020", "12Sep2020");
 		result.forEach((k, v) -> System.out.println(k.getName() + " " + v));
 		assertNotNull(result);
+	}
+	
+	@Test
+	public void whenHotelAddedToSystemRatingShouldGetAdded() // rating to the hotel.
+	{
+		Hotel hotel1 = new Hotel("Lakewood", 110, 90, 80, 80, 3);
+		Hotel hotel2 = new Hotel("Bridgewood", 160, 60, 110, 50, 4);
+		Hotel hotel3 = new Hotel("Ridgewood", 220, 150, 100, 40, 5);
+		HotelReservation hotelReservation = new HotelReservation();
+		hotelReservation.add(hotel1);
+		hotelReservation.add(hotel2);
+		hotelReservation.add(hotel3);
+		List<Hotel> hotelList = hotelReservation.getHotelList();
+		boolean result = hotelList.get(0).getRating() == 3 && hotelList.get(1).getRating() == 4
+				&& hotelList.get(2).getRating() == 5;
+		assertTrue(result);
 	}
 }
